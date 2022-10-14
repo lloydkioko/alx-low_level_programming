@@ -1,4 +1,3 @@
-#!/bin/bash
 /* Prints string */
 
 #include <stdio.h>
