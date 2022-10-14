@@ -3,7 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 
-
+/**
+ * main - function contains main program code
+ * Return: print string; 0 otherwise
+ */
 
 int main(void)
 {
