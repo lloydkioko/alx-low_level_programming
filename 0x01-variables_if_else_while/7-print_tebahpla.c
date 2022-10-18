@@ -1,17 +1,17 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - Program starts here
  *
- * Return: prints digits from 0 - 9; 0 otherwise
+ * Return: prints alphabet in lowercase; 0 otherwise
  */
 
 int main(void)
 {
 	int i;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 122; i >= 97; i--)
 		putchar(i);
 
 	putchar('\n');
