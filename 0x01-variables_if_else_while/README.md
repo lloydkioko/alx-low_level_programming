@@ -4,3 +4,4 @@ C - Variables, if, else, while
 2. 2-print_alphabet.c - A program that prints alphabet in lowercase
 3. 3-print_alphabets.c - A program that prints out the alphabet in lowercase, and then in uppercase, followed by a new line
 4. 4-print_alphabt.c - A program that prints the alphabet in lowercase, followed by a new line
+5. 5-print_numbers.c - A program that prints all single digit numbers of base 10 starting from 0, followed by a new line
