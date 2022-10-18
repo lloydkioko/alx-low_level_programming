@@ -4,7 +4,7 @@
 
 /**
  * main - Program starts here
- * 
+ *
  * Return: prints string; 0 otherwise
  */
 
