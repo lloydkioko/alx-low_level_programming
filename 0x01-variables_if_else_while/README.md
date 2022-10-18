@@ -10,3 +10,4 @@ C - Variables, if, else, while
 8. 8-print_base16.c - A program that prints all the numbers of base 16 in lowercase, followed by a new line
 9. 9-print_comb.c - A program that prints all possible combinations of single-digit numbers
 10. 100-print_comb3.c - A program that prints all possible different combinations of two digits
+11. 101-print_comb4.c - A program that prints all possible different combinations of three digits
