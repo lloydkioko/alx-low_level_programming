@@ -1,43 +1,23 @@
 #include "main.h"
 
 /**
-  * print_times_table - prints n times table, from zero
-  * @n: number to print times table of
-  * Return: null if n > 15 or n < 0
-  */
-void print_times_table(int n)
-{
-	int i, j, k, l, m;
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
 
-	for (i = 0; i <= n; i++)
-	{
-		for (j = 0; j <= n; j++)
-		{
-			k = i * j;
+void print_times_table(int n){
+	int x, y, array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
-			if (k > n)
-			{
-				l = k % 10;
-				m = (k - l) / 10;
-
-				_putchar(44);
-				_putchar(32);
-				_putchar(m + '0');
-				_putchar(l + '0');
-			}
-			else
-			{
-				if (j != 0)
-				{
-					_putchar(44);
-					_putchar(32);
-					_putchar(32);
-				}
-
-				_putchar(k + '0');
-			}
+	for(x=1; x<=12; x=x+1){
+		for(y=0; y<=11; y=y+1){
+			printf("%d", array[y]*x);
 		}
-
-		_putchar('\n');
+		printf("\n");
 	}
+}
+
+int main(void){
+print_times_table();
+return 0;
 }
