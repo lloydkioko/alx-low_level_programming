@@ -1,37 +1,46 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <ctype.h>
 /**
- * main - adds positive numbers
+ * main - adds numbers. checks if number
  * @argc: number of arguments
- * @argv: array containing arguments passed to the program
- * Return: 0 if no number is passed as argument
- *         1 and prints Error if one number contains a symbol
+ * @argv: the vector that hold the arguments
+ *
+ * Description: using arc and argv to achieve the intended function
+ * Return: returns 0 if it works or something else if error
+ * A: if arg has no nunber inputs then print 0
+ * B: if arg has some inputs loop the code via while loop, decrement argc
+ * C: loop through the string of argv and check if anything not a digit
+ * D: If it is not a digit then enter the error statement
+ * E: add the atoi of the arg cause it passed the checks.
  */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i, sum = 0;
-
-	if (argc == 1)
-	{
-		printf("0\n");
-	}
-	else
-	{
-		for (i = 1; i < argc; i++)
-		{
-			if ((*argv[i] < '0' || *argv[i] > '9'))
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				sum += atoi(argv[i]);
-			}
-		}
-		printf("%d\n", sum);
-	}
-	return (0);
+int sum = 0;
+int i = 1;
+int j;
+if (argc == 1)/* A */
+{
+printf("0\n");
+return (0);
+}
+while (argc > 1)/* B */
+{
+j = 0;
+while (argv[i][j])/* C */
+{
+if (!isdigit(argv[i][j]))/* D */
+{
+printf("Error\n");
+return (1);
+}
+j++;
+}
+sum += atoi(argv[i]);/* E */
+i++;
+argc--;
+}
+printf("%i\n", sum);
+return (0);
 }
