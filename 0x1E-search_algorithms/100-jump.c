@@ -1,48 +1,54 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
- * jump_search - looks for value in sorted array of integers by Jump Search
- * @array: array containing arguments passed to the program
- * @size: number of arguments
- * @value: value to search for
- * Return: index where value is located, -1 if array is NULL/ value not present
+ * jump_search - searches for a value in a sorted array of integers
+ * using the Jump search algorithm
+ * @array: array to look into
+ * @size: size of the array
+ * @value: value to look for
+ *
+ * Return: index of the value found, or -1
  */
-
 int jump_search(int *array, size_t size, int value)
 {
-	size_t i = 0;
-	size_t step, top;
+	size_t start, end, step;
 
-	if (array == NULL)
+	if (!array || size == 0)
 		return (-1);
+	step = sqrt(size);
+	start = 0, end = step;
 
-	step = (sqrt(size));
-
-	for (; i < size; i += step)
+	while (start < size)
 	{
-		if (array[i] >= value)
+		printf("Value checked array[%lu] = [%d]\n", start, array[start]);
+		if (end < size)
 		{
-			printf("Value found between indexes [%ld] and [%ld]\n",
-			       i - step, i);
-			top = i;
-			i = i - step;
-			break;
-		}
-		else if (i == size - 1)
+			if (array[start] <= value && value <= array[end])
+			{
+				printf("Value found between indexes [%lu] and [%lu]\n", start, end);
+				break;
+			}
+		} else
 		{
-			printf("Value found between indexes [%ld] and [%ld]\n",
-			       i, i + step);
-			top = i;
-			break;
+			if (array[start] <= value)
+			{
+				printf("Value found between indexes [%lu] and [%lu]\n", start, end);
+				break;
+			}
 		}
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+		start = end;
+		end = start + step;
 	}
 
-	for (; i <= top; i++)
+	while (start <= end)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
+		if (start == size)
+			return (-1);
+		printf("Value checked array[%lu] = [%d]\n", start, array[start]);
+		if (array[start] == value)
+			return (start);
+		start++;
 	}
 
 	return (-1);
